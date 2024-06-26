@@ -22,6 +22,8 @@ public final class Optional<T> {
 }
 ```
 
+<br>
+
 - value를 가져오기 위해서는 **.get()** 메서드를 사용
 
 ```java
@@ -35,6 +37,7 @@ public T get() {
 
 <br>
 <br>
+<br>
 
 ## Optional 메서드의 사용 방법
 
@@ -44,6 +47,8 @@ public T get() {
 Optional emptyOptional = Optional.empty();
 ```
 
+<br>
+
 - Optional.of() : Null이 아닌 Optional 객체 생성
 
 ```java
@@ -51,12 +56,16 @@ String name = "Hello";
 Optional<String> opt = Optional.of(name);
 ```
 
+<br>
+
 - Optional.ofNullable() : Null이 될 수 있는 Optional 객체 생성
 
 ```java
 String name = null;
 Op tional<String> opt = Optional.ofNullable(name);
 ```
+
+<br>
 
 ### Optional.of와 Optional.ofNullable의 차이
 
