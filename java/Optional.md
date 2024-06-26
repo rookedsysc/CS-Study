@@ -22,8 +22,6 @@ public final class Optional<T> {
 }
 ```
 
-<br>
-
 - value를 가져오기 위해서는 **.get()** 메서드를 사용
 
 ```java
@@ -35,7 +33,6 @@ public T get() {
 }
 ```
 
-<br>
 <br>
 <br>
 
@@ -69,6 +66,8 @@ Op tional<String> opt = Optional.ofNullable(name);
 
 ### Optional.of와 Optional.ofNullable의 차이
 
+<br>
+
 ```java
 public static <T> Optional<T> of(T value) {
     return new Optional<>(Objects.requireNonNull(value));
@@ -95,11 +94,12 @@ public static <T> Optional<T> ofNullable(T value) {
 }
 ```
 
-- Optional.of()를 사용하는 상황
-  - 값이 명확히 보장이 될 때 
-    - 값이 null이 아님을 보장할 수 있는 경우에 Optional.of()를 사용해서 **null 확인을 생략**할 수 있음
-  - 외부 메서드가 null을 반환하지 않을 때 
-    - 외부 라이브러리나 API의 메서드가 null을 반환하지 않는다는 것을 알고 있고 null이 만약에 반환된다면 API의 문제로 간주해야하는 상황에 사용
+#### Optional.of()를 사용하는 상황
+
+- 값이 명확히 보장이 될 때 
+  - 값이 null이 아님을 보장할 수 있는 경우에 Optional.of()를 사용해서 **null 확인을 생략**할 수 있음
+- 외부 메서드가 null을 반환하지 않을 때 
+  - 외부 라이브러리나 API의 메서드가 null을 반환하지 않는다는 것을 알고 있고 null이 만약에 반환된다면 API의 문제로 간주해야하는 상황에 사용
 
 <br>
 <br>
@@ -160,8 +160,9 @@ Optional 객체가 비어있는 경우에 대체할 값을 지정할 수 있음
 - 내부 구현 
 
 ```java
-Optional<String> userName = Optional.ofNullable(null);
-String name = userName.orElse("홍길동");
+public T orElse(T other) {
+    return value != null ? value : other;
+}
 ```
 
 - 사용 예시 
